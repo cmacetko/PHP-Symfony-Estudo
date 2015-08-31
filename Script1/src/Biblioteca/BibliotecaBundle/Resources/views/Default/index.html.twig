@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" />
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+
+{% include 'EstTopo.twig' %}
+
+
+{% include 'BibliotecaBundle:Default:testeinclude.html.twig' %}
+
+<br>
+<br>
+
+<div id="sidebar">
+    {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    {% endblock %}
+</div>
+
+
+<br>
+<br>
+
+{{ asset('bootstrap/css/bootstrap.min.css') }}
+
+{{ asset('js/teste.js') }}
+
+
+
+<br>
+<br>
+
+
+Hello {{ name }}!
+
+<br>
+<br>
+<br>
+
+{% set foo = 'foxxxxo' %}
+{{  foo  }}
+<br>
+<p>Activate your account before {{ 'next Monday'|date('M j, Y') }}</p>
+
+
+
+<br>
+<br>
+
+
+{% filter upper %}
+    This text becomes uppercase
+{% endfilter %}
+
+
+<br>
+<br>
+
+
+{% import "TesteMacros.twig" as forms %}
+<p>{{ forms.input('username', 'jihehwfj') }}</p>
+
+
+
+
+<Br>
+<br>
+
+
+{% spaceless %}
+    <div>
+        <strong>foo bar</strong>
+    </div>
+{% endspaceless %}
+
+
+<Br>
+<br>
+
+
+
+
+
+{% block title1 %}123{% endblock %}
+
+
+{{ block('title1') }}
+
+
+
+<Br>
+<br>
+
+
+
+
+{{ include('BibliotecaBundle:article:article_details.html.twig', { 'article': 'retyre' }) }}
+
+
+
+<Br>
+<br>
+
+{{ path('hello', {'name': 'xxxxx'}) }}
+
+<Br>
+<br>
+
+
+{% include 'EstRodape.twig' %}
+
+</body>
+</html>

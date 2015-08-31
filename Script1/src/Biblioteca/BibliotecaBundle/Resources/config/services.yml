@@ -1,0 +1,11 @@
+services:
+
+    Exemplo1:
+        class: Biblioteca\BibliotecaBundle\Services\Exemplo1
+
+    Exemplo2:
+        class: Biblioteca\BibliotecaBundle\Services\Exemplo2
+        arguments: [@session]
+
+    Exemplo3:
+        class: Biblioteca\BibliotecaBundle\Services\Exemplo3
